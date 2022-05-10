@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC643C99-F0C1-42A3-91EA-2AE83E3C52ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zirve.NotificationEngine.Client</RootNamespace>
+    <AssemblyName>Zirve.NotificationEngine.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\Attachment.cs" />
+    <Compile Include="DTO\NotificationInquiryResponse.cs" />
+    <Compile Include="DTO\NotificationInquiryRequest.cs" />
+    <Compile Include="DTO\MessageVariable.cs" />
+    <Compile Include="DTO\NotificationService\Enqueue\MessageVariableDTO.cs" />
+    <Compile Include="DTO\NotificationService\Enqueue\RecipientDTO.cs" />
+    <Compile Include="DTO\NotificationService\NotificationInquiry\NotificationInquiryRequestDTO.cs" />
+    <Compile Include="DTO\NotificationService\NotificationInquiry\NotificationInquiryResponseDTO.cs" />
+    <Compile Include="DTO\Recipient.cs" />
+    <Compile Include="DTO\EnqueueRequest.cs" />
+    <Compile Include="DTO\EnqueueResponse.cs" />
+    <Compile Include="DTO\NotificationService\Enqueue\EnqueueRequestDTO.cs" />
+    <Compile Include="DTO\NotificationService\Enqueue\EnqueueResponseDTO.cs" />
+    <Compile Include="DTO\NotificationService\Enqueue\ParameterDTO.cs" />
+    <Compile Include="DTO\NotificationService\RequestDTOBase.cs" />
+    <Compile Include="DTO\NotificationService\ResponseDTOBase.cs" />
+    <Compile Include="DTO\NotificationService\Enqueue\AttachmentDTO.cs" />
+    <Compile Include="DTO\Parameter.cs" />
+    <Compile Include="Enumerations\SmsPublishType.cs" />
+    <Compile Include="Enumerations\EmailPublishType.cs" />
+    <Compile Include="Enumerations\NotificationPublishType.cs" />
+    <Compile Include="Enumerations\NotificationWorkingType.cs" />
+    <Compile Include="NotificationClient.cs" />
+    <Compile Include="INotificationClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\INotificationQueueService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

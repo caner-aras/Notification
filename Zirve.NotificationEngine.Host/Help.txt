@@ -1,0 +1,1 @@
+﻿sc.exe config NetTcpPortSharing start= demand

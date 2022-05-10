@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B004164-0C45-4766-B5E6-002E14AD071D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayFlex.NotificationEngine.Core</RootNamespace>
+    <AssemblyName>PayFlex.NotificationEngine.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.WcfIntegration">
+      <HintPath>..\packages\Castle.WcfIntegrationFacility.3.3.0\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PayFlex.Collection.Infrastructure">
+      <HintPath>..\packages\Payflex.Collection.Infrastructure.1.5.0.206\lib\net40\PayFlex.Collection.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PayFlex.Collection.Infrastructure.Logging.Log4net">
+      <HintPath>..\packages\Payflex.Collection.Infrastructure.Logging.Log4net.1.5.0.206\lib\net40\PayFlex.Collection.Infrastructure.Logging.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PayFlex.Collection.Infrastructure.Persistence.NHibernate">
+      <HintPath>..\packages\Payflex.Collection.Infrastructure.Persistence.NHibernate.1.5.0.206\lib\net40\PayFlex.Collection.Infrastructure.Persistence.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.1.3\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.0.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\ConfigParams.cs" />
+    <Compile Include="Constants\NotificationStatusCode.cs" />
+    <Compile Include="Constants\ResponseCode.cs" />
+    <Compile Include="Domain\DomainObject\AttachmentObject.cs" />
+    <Compile Include="Domain\DomainObject\RecipientObject.cs" />
+    <Compile Include="Domain\DomainObject\MessageVariableObject.cs" />
+    <Compile Include="Domain\DomainObject\ParameterObject.cs" />
+    <Compile Include="Domain\Enumerations\QueueStatus.cs" />
+    <Compile Include="Domain\Mappings\Conventions\ClassConvention.cs" />
+    <Compile Include="Domain\Mappings\Conventions\HasManyConvention.cs" />
+    <Compile Include="Domain\Mappings\Conventions\HasManyToManyConvention.cs" />
+    <Compile Include="Domain\Mappings\Conventions\HasOneConvention.cs" />
+    <Compile Include="Domain\Mappings\Conventions\PropertyConvention.cs" />
+    <Compile Include="Domain\Mappings\Conventions\ReferenceConvention.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueMessageVariable.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueRecipient.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueEmailPublishType.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueue.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueArchive.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueAttachment.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueDetail.cs" />
+    <Compile Include="Domain\Mappings\NotificationQueueParameter.cs" />
+    <Compile Include="Domain\Models\NotificationQueueMessageVariable.cs" />
+    <Compile Include="Domain\Models\NotificationQueueRecipient.cs" />
+    <Compile Include="Domain\Models\NotificationQueueEmailPublishType.cs" />
+    <Compile Include="Domain\Models\EntityBase.cs" />
+    <Compile Include="Domain\Models\NotificationQueue.cs" />
+    <Compile Include="Domain\Models\NotificationQueueArchive.cs" />
+    <Compile Include="Domain\Models\NotificationQueueAttachment.cs" />
+    <Compile Include="Domain\Models\NotificationQueueDetail.cs" />
+    <Compile Include="Domain\Models\NotificationQueueParameter.cs" />
+    <Compile Include="Domain\Models\SmartMessage\Responses\SENDSMSRSP.cs" />
+    <Compile Include="Domain\Repositories\NotificationQueueArchiveRepository.cs" />
+    <Compile Include="Domain\Repositories\NotificationQueueRepository.cs" />
+    <Compile Include="Domain\Repositories\RepositoryBase.cs" />
+    <Compile Include="Domain\Services\IDomainService.cs" />
+    <Compile Include="Domain\Services\NotificationQueueDomainService.cs" />
+    <Compile Include="Engines\QueueEngine.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="Interceptors\ExceptionInterceptor.cs" />
+    <Compile Include="Interceptors\GateLoggerInterceptor.cs" />
+    <Compile Include="NotificationPublisher\GETREPORTRSP.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\Implementations\AWSSmtpEmailNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\SmsPublisher\Implementations\SmartMessageSmsNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\SmsPublisher\SmsNotificationPublisherFactory.cs" />
+    <Compile Include="NotificationPublisher\Implementations\SmsPublisher\SmsPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\SmsPublisher\ISmsNotificationPublisherTypedFactory.cs" />
+    <Compile Include="NotificationPublisher\Implementations\SmsPublisher\ISmsNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\InquiryRequest.cs" />
+    <Compile Include="NotificationPublisher\InquiryResponse.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\EmailNotificationPublisherFactory.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\EmailPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\IEmailNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\IEmailNotificationPublisherTypedFactory.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\Implementations\AzureEmailNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\Implementations\SmartMessageEmailNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\Implementations\EmailPublisher\Implementations\SmtpEmailNotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\INotificationPublisher.cs" />
+    <Compile Include="NotificationPublisher\INotificationPublisherTypedFactory.cs" />
+    <Compile Include="NotificationPublisher\NotificationPublisherFactory.cs" />
+    <Compile Include="NotificationPublisher\PublishRequest.cs" />
+    <Compile Include="NotificationPublisher\PublishResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zirve.NotificationEngine.Client\Zirve.NotificationEngine.Client.csproj">
+      <Project>{fc643c99-f0c1-42a3-91ea-2ae83e3c52ed}</Project>
+      <Name>Zirve.NotificationEngine.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
